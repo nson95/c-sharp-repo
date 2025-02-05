@@ -1,7 +1,12 @@
-﻿namespace ch5_proj3_guessing_game
+﻿using System.Security.Cryptography;
+
+namespace ch5_proj3_guessing_game
 {
     internal class Program
     {
+        // constants
+        const int MIN_VAL = 1;
+        const int MAX_VAL = 100;
         static void Main(string[] args)
         {
             Print("Welcome to the Guess the Number Game");
@@ -13,11 +18,11 @@
                 Print("I'm thinking of a number from 1 to 100.\nTry to guess it.");
                 Print("");
                 int secretNbr = createNumber();
-                int userChoice = getInt("Enter number: ");
+                int userChoice = GetInt("Enter number: ", 0, 100);
                 Guess(secretNbr, userChoice);
                 choice = GetString2("Continue? y/n: ", "y", "n");
             }
-
+            Print("Bye! Come back soon.");
         }
 
         private static void Guess(int secretNbr, int userChoice)
@@ -70,25 +75,61 @@
             int randomNbr = randy.Next(1, 101);
             return randomNbr;
         }
-        static int getInt(string prompt)
+
+        static int GetInt(string prompt)
         {
             Print(prompt, "");
             return Int32.Parse(Console.ReadLine());
+        }
+      
+        //throw/catch/handle exceptions
+        static int GetInt(string prompt, int min, int max)
+        {
+            bool success = false;
+            int nbr = 0;
+            while (!success)
+            {
+                Print(prompt, "");
+                try
+                {
+                    nbr = Int32.Parse(Console.ReadLine());
+                }
+              /*  catch
+                {
+                    Print("Error, input must be a whole number.");
+                    continue;
+                }
+              */  catch (Exception e)
+                {
+                    Print("Error, input must be a whole number.");
+                   // Console.Error.WriteLine("Exception: " +e.Message);
+                   // Console.Error.WriteLine("Exception: " + e.StackTrace);
+                   // Console.Error.WriteLine("Exception: " + e.ToString);
+                    continue;
+                }
+                if (nbr < min || nbr > max)
+                {
+                    Print("Error, number out of range. Try again.");
+                }
+                else
+                    success = true;
+            }
+            return nbr;
         }
         static string SumMessage(int numTries)
         {
             string retMsg = "";
             if (numTries <= 3)
             {
-                retMsg = "Great work! You are a mathematical wizard!";
+                retMsg = "You got it in " +numTries +" tries."+".\nGreat work! You are a mathematical wizard!";
             }
             else if (numTries > 3 && numTries <= 7 )
             {
-                retMsg = "Not too bad! You've got some potential!";
+                retMsg = "You got it in " + numTries + " tries." + ".\nNot too bad! You've got some potential!";
             }
             else if (numTries > 7)
             {
-                retMsg = "What took you so long? Maybe you should take some lessons.";
+                retMsg = "You got it in " + numTries + " tries." + ".\nWhat took you so long? Maybe you should take some lessons.";
             }
             return retMsg;
         }
@@ -116,16 +157,6 @@
 
             return retStr;
         }
-        static void compareNumber(int i, int j)
-        {
-            bool success = false;
-            int incr = 0;
-            while (!success)
-            {
-                
-                
-            }
-
-        }
+        
     }
 }
