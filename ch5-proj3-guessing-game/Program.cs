@@ -14,47 +14,52 @@
                 Print("");
                 int secretNbr = createNumber();
                 int userChoice = getInt("Enter number: ");
-                int incr = 0;
-                bool success = false;
-                while (!success)
-                {
-                    if (secretNbr == userChoice)
-                    {
-                        incr++;
-                        Console.WriteLine("");
-                        Print(SumMessage(incr));
-                        success = true;
-                    }
-                    else if (secretNbr - userChoice > 10)
-                    {
-                        incr++;
-                        Console.Write("Way too low! try again.");
-                        userChoice = Int32.Parse(Console.ReadLine());
-                    }
-                    else if (secretNbr - userChoice < -10)
-                    {
-                        incr++;
-                        Console.Write("Way too high! try again.");
-                        userChoice = Int32.Parse(Console.ReadLine());
-                    }
-                    else if (secretNbr > userChoice)
-                    {
-                        incr++;
-                        Console.Write("Too low! try again.");
-                        userChoice = Int32.Parse(Console.ReadLine());
-                    }
-                    else if (secretNbr < userChoice)
-                    {
-                        incr++;
-                        Console.Write("Too high! Try again.");
-                        userChoice = Int32.Parse(Console.ReadLine());
-                    }
-                }
+                Guess(secretNbr, userChoice);
                 choice = GetString2("Continue? y/n: ", "y", "n");
-
             }
 
         }
+
+        private static void Guess(int secretNbr, int userChoice)
+        {
+            int incr = 0;
+            bool success = false;
+            while (!success)
+            {
+                if (secretNbr == userChoice)
+                {
+                    incr++;
+                    Console.WriteLine("");
+                    Print(SumMessage(incr));
+                    success = true;
+                }
+                else if (secretNbr - userChoice > 10)
+                {
+                    incr++;
+                    Console.Write("Way too low! try again.");
+                    userChoice = Int32.Parse(Console.ReadLine());
+                }
+                else if (secretNbr - userChoice < -10)
+                {
+                    incr++;
+                    Console.Write("Way too high! try again.");
+                    userChoice = Int32.Parse(Console.ReadLine());
+                }
+                else if (secretNbr > userChoice)
+                {
+                    incr++;
+                    Console.Write("Too low! try again.");
+                    userChoice = Int32.Parse(Console.ReadLine());
+                }
+                else if (secretNbr < userChoice)
+                {
+                    incr++;
+                    Console.Write("Too high! Try again.");
+                    userChoice = Int32.Parse(Console.ReadLine());
+                }
+            }
+        }
+
         static void Print(string msg, string endLine = "\n")
         {
             Console.WriteLine(msg);
