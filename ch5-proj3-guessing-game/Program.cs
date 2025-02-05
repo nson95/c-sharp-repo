@@ -14,7 +14,43 @@
                 Print("");
                 int secretNbr = createNumber();
                 int userChoice = getInt("Enter number: ");
-                compareNumber(secretNbr, userChoice);
+                int incr = 0;
+                bool success = false;
+                while (!success)
+                {
+                    if (secretNbr == userChoice)
+                    {
+                        incr++;
+                        Console.WriteLine("");
+                        Print(SumMessage(incr));
+                        success = true;
+                    }
+                    else if (secretNbr - userChoice > 10)
+                    {
+                        incr++;
+                        Console.Write("Way too low! try again.");
+                        userChoice = Int32.Parse(Console.ReadLine());
+                    }
+                    else if (secretNbr - userChoice < -10)
+                    {
+                        incr++;
+                        Console.Write("Way too high! try again.");
+                        userChoice = Int32.Parse(Console.ReadLine());
+                    }
+                    else if (secretNbr > userChoice)
+                    {
+                        incr++;
+                        Console.Write("Too low! try again.");
+                        userChoice = Int32.Parse(Console.ReadLine());
+                    }
+                    else if (secretNbr < userChoice)
+                    {
+                        incr++;
+                        Console.Write("Too high! Try again.");
+                        userChoice = Int32.Parse(Console.ReadLine());
+                    }
+                }
+                choice = GetString2("Continue? y/n: ", "y", "n");
 
             }
 
@@ -34,10 +70,56 @@
             Print(prompt, "");
             return Int32.Parse(Console.ReadLine());
         }
-        static string compareNumber(int i, int j)
+        static string SumMessage(int numTries)
+        {
+            string retMsg = "";
+            if (numTries <= 3)
+            {
+                retMsg = "Great work! You are a mathematical wizard!";
+            }
+            else if (numTries > 3 && numTries <= 7 )
+            {
+                retMsg = "Not too bad! You've got some potential!";
+            }
+            else if (numTries > 7)
+            {
+                retMsg = "What took you so long? Maybe you should take some lessons.";
+            }
+            return retMsg;
+        }
+        static string GetString(string prompt)
+        {
+            Print(prompt, "");
+            return Console.ReadLine();
+        }
+        static string GetString2(string prompt, string str1, string str2)
+        {
+            string retStr = "";
+            bool success = false;
+            while (!success)
+            {
+                retStr = GetString(prompt);
+                if (retStr.ToLower() == str1 || retStr.ToLower() == str2)
+                {
+                    success = true;
+                }
+                else
+                {
+                    Print("Error, entry must be either: " + str1 + ", or " + str2 + ". Try again", "");
+                }
+            }
+
+            return retStr;
+        }
+        static void compareNumber(int i, int j)
         {
             bool success = false;
-
+            int incr = 0;
+            while (!success)
+            {
+                
+                
+            }
 
         }
     }

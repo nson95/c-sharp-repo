@@ -11,23 +11,29 @@
             {
                 int die1 = RollDice();
                 int die2 = RollDice();
-                Print("Die 1: " +die1);
-                Print("Die 2: " +die2);
-                if (die1 == 1 && die2 == 1) {
-                    Print("Total: " + (die1 + die2));
-                    Print("Snake eyes!");
-                }
-                else if (die1 == 6 && die2 == 6)
-                {
-                    Print("Total: " + (die1 + die2));
-                    Print("Box cars!");
-                }
-                else
-                    Print("Total: " + (die1 + die2));
+                ShowResults(die1, die2);
 
                 choice = GetString2("Roll again? (y/n)", "y", "n");
             }
 
+        }
+
+        private static void ShowResults(int die1, int die2)
+        {
+            Print("Die 1: " + die1);
+            Print("Die 2: " + die2);
+            if (die1 == 1 && die2 == 1)
+            {
+                Print("Total: " + (die1 + die2));
+                Print("Snake eyes!");
+            }
+            else if (die1 == 6 && die2 == 6)
+            {
+                Print("Total: " + (die1 + die2));
+                Print("Box cars!");
+            }
+            else
+                Print("Total: " + (die1 + die2));
         }
 
         static void Print(string msg, string endLine = "\n")
@@ -52,7 +58,7 @@
                 }
                 else
                 {
-                    Print("Error, entry must be either: " + str1 + ", or" + str2 + ". Try again");
+                    Print("Error, entry must be either: " + str1 + ", or " + str2 + ". Try again", "");
                 }
             }
 
