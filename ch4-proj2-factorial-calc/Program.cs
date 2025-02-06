@@ -37,7 +37,6 @@ namespace ch4_proj2_factorial_calc
                         for (int i = 1; i <= nbr; i++)
                         {
                             res *= i;
-
                         }
                         success = true;
                     }
