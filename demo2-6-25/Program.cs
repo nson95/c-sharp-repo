@@ -9,12 +9,19 @@
             Console.WriteLine("Factorial Calc p2");
             while (choice == "y")
             {
-                nbr = GetLong("Enter an integer thats greater than 0 and less than 10. ", 1, 9);
+                //nbr = GetLong("Enter an integer thats greater than 0 and less than 10. ", 1, 9);
 
+                //long res = 1;
+                //for (int i = 1; i <= nbr; i++)
+                //{
+                //    res *= i;
+                //}
                 long res = 1;
-                for (int i = 1; i <= nbr; i++)
+                long factorial = 1;
+                for (int i = 1; factorial > 0; i++)
                 {
-                    res *= i;
+                    factorial *= i;
+                    Console.WriteLine("i: " + i + ", factorial: " + factorial);
                 }
 
                 Console.WriteLine(("The factorial of " + nbr + " is " + res));

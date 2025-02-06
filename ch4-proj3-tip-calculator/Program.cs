@@ -21,7 +21,7 @@ namespace ch4_proj3_tip_calculator
                 {
                     Console.WriteLine("Error, entry must be a valid cost.");
                 }
-                PrintTips(cost);
+                PrintTips(cost, .15, .20, .25);
                 choice = GetString("Continue? y/n ", "y", "n");
             }
         }
@@ -49,11 +49,11 @@ namespace ch4_proj3_tip_calculator
 
             return retStr;
         }
-            static void PrintTips(double mealCost)
+            static void PrintTips(double mealCost, double low, double mid, double high)
         {
-            Console.WriteLine("\n15%\nTip amount:\t" + "$" + Math.Round((mealCost * .15), 2) +"\nTotal amount:\t" + "$" + Math.Round((mealCost * .15)+(mealCost), 2));
-            Console.WriteLine("\n20%\nTip amount:\t" + "$" + Math.Round((mealCost * .2), 2) + "\nTotal amount:\t" + "$" + Math.Round((mealCost * .2) + (mealCost), 2));
-            Console.WriteLine("\n25%\nTip amount:\t" + "$" + Math.Round((mealCost * .25), 2) + "\nTotal amount:\t" + "$" + Math.Round((mealCost * .25) + (mealCost), 2)+"\n");
+            Console.WriteLine("\n" +(low*100) +"%\nTip amount:\t" + "$" + Math.Round((mealCost * (double)low), 2) +"\nTotal amount:\t" + "$" + Math.Round((mealCost * (double)low) +(mealCost), 2));
+            Console.WriteLine("\n" + (mid* 100) + "%\nTip amount:\t" + "$" + Math.Round((mealCost * (double)mid), 2) +"\nTotal amount:\t" + "$" + Math.Round((mealCost * (double)mid) + (mealCost), 2));
+            Console.WriteLine("\n" + (high * 100) + "%\nTip amount:\t" + "$" + Math.Round((mealCost * (double)high), 2) +"\nTotal amount:\t" + "$" + Math.Round((mealCost * (double)high) +(mealCost), 2)+"\n");
         }
     }
 }
