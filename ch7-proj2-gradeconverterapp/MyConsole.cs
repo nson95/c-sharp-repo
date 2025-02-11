@@ -1,5 +1,5 @@
 ﻿
-namespace ch7proj1_contactslist
+namespace ch7_proj2_gradeconverterapp
 {
     public class MyConsole
     {
@@ -56,6 +56,29 @@ namespace ch7proj1_contactslist
             }
 
             return retStr;
+        }
+        public static int GetInt(string prompt, int min, int max)
+        {
+            int results = 0;
+            bool success = false;
+            while (!success)
+            {
+                Console.Write(prompt);
+                if (!int.TryParse(Console.ReadLine(), out results))
+                {
+                    Console.WriteLine("Error, result of at bat must be a valid number.");
+                    continue;
+                }
+                if (results > max || results < min)
+                {
+                    Console.WriteLine($"Error, results must be between {min} and {max}");
+                }
+                else
+                {
+                    success = true;
+                }
+            }
+            return results;
         }
     }
     
