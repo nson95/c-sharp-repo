@@ -40,7 +40,7 @@ namespace ch15_proj2_wizardinventory
                 menu.Add(item);
             }
 
-
+                 
         }
     }
 }
