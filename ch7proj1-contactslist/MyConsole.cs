@@ -51,7 +51,7 @@ namespace ch7proj1_contactslist
                 }
                 else
                 {
-                    Print("Error, entry must be either: " + str1 + ", or " + str2 + ". Try again");
+                    Print("Error, entry must be either: " + str1 + ", or " + str2 + ". Try again"    );
                 }
             }
 

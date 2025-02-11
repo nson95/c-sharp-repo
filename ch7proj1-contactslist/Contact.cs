@@ -29,7 +29,9 @@ namespace ch7proj1_contactslist
                    $"------------------------------------\n" +
                    $"Name:\t\t{FirstName} {LastName}\n" +
                    $"Email Address:\t{Email}\n" +
-                   $"Phone Number:\t{Phone}\n";
+                   $"Phone Number:\t{Phone}\n"
+                   +
+                   $"------------------------------------\n"    ;
         }
     }
 }

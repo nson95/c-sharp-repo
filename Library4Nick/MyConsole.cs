@@ -1,5 +1,5 @@
 ﻿
-namespace ch7_proj4_dicerollerapp
+namespace Library4Nick
 {
     public class MyConsole
     {
@@ -79,12 +79,6 @@ namespace ch7_proj4_dicerollerapp
                 }
             }
             return results;
-        }
-        public static int RollOfDice()
-        {
-            Random randy = new Random();
-            int result = randy.Next(1, 7);
-            return result;
         }
     }
     
