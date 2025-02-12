@@ -12,7 +12,8 @@ namespace PigDiceApp
 
             while (choice == "y")
             {
-
+                Game game = new Game();
+                game.PlayGame();
                 choice = MyConsole.GetString2("Continue? (y/n): ", "y", "n");
             }
         }
