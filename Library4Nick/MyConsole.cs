@@ -26,7 +26,7 @@ namespace Library4Nick
             {
                 if (Int32.TryParse(Console.ReadLine(), out result))
                     isValid = true;
-                else PrintLine("Error - invalid year.");
+                else PrintLine("Error - invalid integer.");
             }
 
 
