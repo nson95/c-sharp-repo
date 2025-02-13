@@ -8,7 +8,6 @@ namespace ch11_proj1_animalcounter
 {
     internal class Alligator : Animal, Countable
     {
-        public int Count {  get; set; } 
         public int getCount()
         {
             throw new NotImplementedException();
