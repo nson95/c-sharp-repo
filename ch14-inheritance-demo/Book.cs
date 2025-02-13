@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ch14_inheritance_demo
 {
-    internal class Book : Product
+    internal sealed class Book : Product
     {
         public string Author {  get; set; }
 
