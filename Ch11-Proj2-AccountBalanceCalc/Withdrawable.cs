@@ -8,5 +8,6 @@ namespace Ch11_Proj2_AccountBalanceCalc
 {
     internal interface Withdrawable
     {
+        void Withdraw(decimal amount);  
     }
 }

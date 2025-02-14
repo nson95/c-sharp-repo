@@ -80,6 +80,25 @@ namespace Library4Nick
             }
             return results;
         }
+        public static decimal PromptDecimal(string prompt)
+        {
+            decimal result = 0m;
+            bool isValid = false;
+            while (!isValid)
+            {
+                Print(prompt);
+                if (Decimal.TryParse(Console.ReadLine(), out result))
+                {
+                    isValid = true;
+                }
+                else
+                {
+                    PrintLine("Error - invalid decimal.");
+                }
+            }
+
+            return result;
+        }
     }
     
 }

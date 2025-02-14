@@ -8,5 +8,6 @@ namespace Ch11_Proj2_AccountBalanceCalc
 {
     internal interface Depositable
     {
+        void Deposit(decimal amount);
     }
 }
