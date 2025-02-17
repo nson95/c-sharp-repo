@@ -14,8 +14,21 @@ namespace Library4Nick
         }
         public static string PromptString(string prompt)
         {
-            Print(prompt);
-            return Console.ReadLine();
+            string retStr = "";
+            bool success = false;
+            while (!success) {
+                Print(prompt);
+                if (retStr == "") {
+                    Print("Error, must be a valid entry");
+                }
+                else
+                {
+                    retStr = Console.ReadLine();
+                    success = true;
+                }
+
+            }
+            return retStr;      
         }
         public static int PromptInt(string prompt)
         {
@@ -52,6 +65,25 @@ namespace Library4Nick
                 else
                 {
                     Print("Error, entry must be either: " + str1 + ", or " + str2 + ". Try again");
+                }
+            }
+
+            return retStr;
+        }
+        public static string GetString2(string prompt, string str1, string str2, string str3, string str4)
+        {
+            string retStr = "";
+            bool success = false;
+            while (!success)
+            {
+                retStr = GetString(prompt);
+                if (retStr.ToUpper() == str1 || retStr.ToUpper() == str2)
+                {
+                    success = true;
+                }
+                else
+                {
+                    Print("Error, entry must be either: " + str1 + ", or " + str2+ ", or " + str3 + ", or " + str4 +". Try again");
                 }
             }
 
