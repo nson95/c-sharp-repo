@@ -8,11 +8,14 @@ namespace Hangman_App
 {
     internal class WordDictionary
     {
+        public static Random randy = new Random(); 
         public string? word {  get; set; }
-        public static List<string> MakeDictionary()
+        public static string GetRandomWord()
         {
+            string randomWord = "";
             List<string> words = new List<string>
             {
+
                 "apple", "banana", "car", "dog", "elephant", "flower", "house", "jump", "kite", "laugh", "moon", "night", "orange", "play",
                 "quick", "river", "sun", "tree", "under", "very", "water", "xylophone", "yellow", "zebra", "anchor", "bicycle", "cloud", "dinosaur",
                 "earth", "friend", "game", "hill", "ice", "jellyfish", "king", "leaf", "mountain", "new", "ocean", "pen", "queen", "rocket",
@@ -26,8 +29,18 @@ namespace Hangman_App
                 "deck", "echo", "flame", "guitar", "hornet", "icon", "jungle", "lunch", "master", "nightlight", "operation", "purple", "quest",
                 "rosebud", "sand", "topple", "urgent", "vivid", "warmth", "xenon", "yellowstone", "zamboni"
             };
+            randomWord = words[randy.Next(1, 151)];
 
-            return words;
+            return randomWord;
+        }
+        public static string GetHiddenWord(string word)
+        {
+            string hiddenWord = "";
+            foreach (char c in word)
+            {
+                hiddenWord += "_";
+            }
+            return hiddenWord;
         }
     }
 }

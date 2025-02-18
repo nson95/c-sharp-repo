@@ -8,4 +8,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Library4Nick">
+      <HintPath>..\Library4Nick\bin\Release\net8.0\Library4Nick.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
