@@ -65,10 +65,10 @@ namespace ch17_1_productmanager
                 else
                 {
                     products.Remove(p);
-                    MyConsole.PrintLine("Product deleted.");
+                    MyConsole.PrintLine($"Product {p.Code} deleted.");
+                    ProductDB.SaveProducts(products);
                 }
             }
-            ProductDB.SaveProducts(products);
             
 
         }

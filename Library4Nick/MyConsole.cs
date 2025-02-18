@@ -14,17 +14,17 @@ namespace Library4Nick
         }
         public static string PromptString(string prompt)
         {
-            string retStr = "";
+            string retStr = null;
             bool success = false;
             while (!success) {
                 Print(prompt);
-                if (retStr == "") {
-                    Print("Error, must be a valid entry");
+                retStr = Console.ReadLine();
+                if (retStr != null) {
+                    success = true;
                 }
                 else
                 {
-                    retStr = Console.ReadLine();
-                    success = true;
+                    Print("Error, must be an entry");
                 }
 
             }
@@ -77,7 +77,7 @@ namespace Library4Nick
             while (!success)
             {
                 retStr = GetString(prompt);
-                if (retStr.ToUpper() == str1 || retStr.ToUpper() == str2)
+                if (retStr.ToUpper() == str1 || retStr.ToUpper() == str2 || retStr.ToUpper() == str3 || retStr.ToUpper() == str4)
                 {
                     success = true;
                 }
