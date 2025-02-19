@@ -16,18 +16,27 @@ namespace Hangman_App
             List<string> words = new List<string>
             {
 
-                "apple", "banana", "car", "dog", "elephant", "flower", "house", "jump", "kite", "laugh", "moon", "night", "orange", "play",
-                "quick", "river", "sun", "tree", "under", "very", "water", "xylophone", "yellow", "zebra", "anchor", "bicycle", "cloud", "dinosaur",
-                "earth", "friend", "game", "hill", "ice", "jellyfish", "king", "leaf", "mountain", "new", "ocean", "pen", "queen", "rocket",
-                "star", "tiger", "umbrella", "vampire", "whale", "x-ray", "yarn", "zoo", "art", "ball", "cat", "doghouse", "earthworm", "firetruck",
-                "guitar", "hat", "island", "jumping", "kite", "lion", "moonlight", "noodle", "open", "parrot", "question", "rose", "sock", "turtle",
-                "unicorn", "violet", "waterfall", "extra", "yellowish", "zephyr", "applepie", "badger", "carrot", "dove", "envelope", "frog",
-                "grape", "hands", "interact", "joy", "kiwi", "lighthouse", "monkey", "nest", "outlook", "present", "quiz", "rocketship",
-                "squirrel", "tiger", "up", "variety", "window", "xylophonist", "yawn", "zookeeper", "airplane", "button", "cloudy", "dream",
-                "elephant", "fish", "goodbye", "hilltop", "iron", "jungle", "kiteboard", "lemon", "mango", "note", "overcast", "pencil", "questionable",
-                "rainbow", "squirrel", "topaz", "umbrella", "violet", "wizard", "xerox", "yogurt", "zooey", "antelope", "balloon", "carousel",
-                "deck", "echo", "flame", "guitar", "hornet", "icon", "jungle", "lunch", "master", "nightlight", "operation", "purple", "quest",
-                "rosebud", "sand", "topple", "urgent", "vivid", "warmth", "xenon", "yellowstone", "zamboni"
+                           "apple", "ball", "cat", "dog", "elephant", "fish", "grape", "hat", "ice", "jump",
+                    "kite", "lemon", "moon", "nose", "orange", "pen", "quick", "rain", "sun", "tree",
+                    "umbrella", "violet", "whale", "x-ray", "yellow", "zebra", "air", "blue", "cloud",
+                    "duck", "egg", "farm", "goat", "hill", "ink", "jelly", "kite", "leaf", "mouse",
+                    "night", "open", "play", "quiet", "rocket", "star", "toy", "unit", "van", "wind",
+                    "xylophone", "yarn", "zoo", "ant", "balloon", "candle", "doll", "elephant", "fishbowl",
+                    "guitar", "happy", "icecream", "jellyfish", "key", "lamp", "moonlight", "nut", "owl",
+                    "pencil", "question", "rose", "snow", "treehouse", "up", "vampire", "water", "xmas",
+                    "yellowish", "zooey", "act", "bat", "clown", "door", "even", "fly", "giraffe", "hop",
+                    "inch", "joy", "kangaroo", "lemonade", "mask", "noodles", "ocean", "pizza", "quilt",
+                    "rainbow", "sock", "tent", "under", "very", "watch", "x-ray", "yarn", "zipper",
+                    "applepie", "ballerina", "catfish", "dove", "elephant", "flower", "garden", "hat",
+                    "island", "jumping", "keyhole", "laugh", "mango", "necklace", "octopus", "plum",
+                    "quack", "road", "snowflake", "turtle", "underwater", "vacuum", "wet", "xenon",
+                    "yellowstone", "zigzag", "airplane", "boat", "chicken", "duckling", "eggplant",
+                    "fence", "green", "hug", "island", "jellybean", "koala", "lighthouse", "moonbeam",
+                    "notebook", "puddle", "queen", "rockstar", "snowman", "toybox", "unicorn", "violet",
+                    "watch", "xylophonist", "yellowtail", "zamboni", "acorn", "breeze", "cactus", "dust",
+                    "elbow", "feather", "goggles", "hugging", "ignition", "juice", "king", "lion", "muffin",
+                    "noodle", "oatmeal", "pen", "quince", "rosebud", "sock", "teardrop", "ufo", "vulture",
+                    "wrench", "xenopus", "yoga", "zone"
             };
             randomWord = words[randy.Next(1, 151)];
 

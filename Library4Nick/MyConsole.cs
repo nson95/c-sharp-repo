@@ -30,6 +30,29 @@ namespace Library4Nick
             }
             return retStr;      
         }
+        public static void PrintList<T>(List<T> list)
+        {
+            foreach (T item in list)
+            {
+                PrintLine(item.ToString());
+            }
+        }
+        public static char GetChar(string prompt)
+        {
+            char retChr = '0';
+            Print(prompt);
+            bool isValid = false;
+            while (!isValid)
+            {
+                if (char.TryParse(Console.ReadLine(), out retChr))
+                    isValid = true;
+                else PrintLine("Error - invalid letter.");
+            }
+
+
+
+            return retChr;
+        }
         public static int PromptInt(string prompt)
         {
             Print(prompt);
