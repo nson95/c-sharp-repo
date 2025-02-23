@@ -54,16 +54,14 @@ namespace Hangman_App
                     //MyConsole.PrintLine(word + "\n" + hiddenWord);
                     while (incorrectGuesses < 6 && !wordGuessed)
                     {
-                        MyConsole.PrintLine($"{images[0]}\n\n{hiddenWord}");
-                        MyConsole.PrintLine($"{word}");
+                        MyConsole.PrintLine($"{images[incorrectGuesses]}\n\n{hiddenWord}\n");
+                        MyConsole.PrintLine(PrintList(guessedLetters));
                         guess = MyConsole.GetChar("Guess a letter: ");
                         if (!word.Contains(guess))
                         {
                             MyConsole.PrintLine("Nope, no matches!");
                             incorrectGuesses++;
                             guessedLetters.Add(guess);
-                            MyConsole.PrintLine(DisplayHangmanImage(incorrectGuesses));
-                            MyConsole.PrintLine(PrintList(guessedLetters));
                             MyConsole.PrintLine(hiddenWord);
 
 
@@ -79,16 +77,16 @@ namespace Hangman_App
                                 if (c.Equals(guess))
                                 {
                                     hiddenForProcessing[i] = c;
+                                    guessedLetters.Add(guess);
+                                    MyConsole.PrintLine(PrintList(guessedLetters));
                                 }
                                 else
                                 {
                                 }
                             }
                             hiddenWord = new string(hiddenForProcessing);
-                            guessedLetters.Add(guess);
                             if (hiddenWord == word)
                             {
-                                DisplayHangmanImage(incorrectGuesses);
                                 MyConsole.PrintLine($"Congrats! You got it!\n\n{word} was the word!");
                                 wordGuessed = true;
                             }
@@ -117,7 +115,7 @@ namespace Hangman_App
         }
         static void PopulateImages()
         {
-            images[0] = """
+            images[6] = """
                         -----
                         |   |
                         |   0
@@ -126,7 +124,7 @@ namespace Hangman_App
                         |
                         -------
                         """;
-            images[1] = """
+            images[5] = """
                         -----
                         |   |
                         |   0
@@ -135,7 +133,7 @@ namespace Hangman_App
                         |
                         -------
                         """;
-            images[2] = """
+            images[4] = """
                         -----
                         |   |
                         |   0
@@ -148,12 +146,12 @@ namespace Hangman_App
                         -----
                         |   |
                         |   0
-                        |  /
+                        |  /|
                         |  
                         |
                         -------
                         """;
-            images[4] = """
+            images[2] = """
             -----
             |   |
             |   0
@@ -162,7 +160,7 @@ namespace Hangman_App
             |
             -------
             """;
-            images[5] = """
+            images[1] = """
             -----
             |   |
             |   0
@@ -171,7 +169,7 @@ namespace Hangman_App
             |
             -------
             """;
-            images[6] = """
+            images[0] = """
             -----
             |   |
             |   
